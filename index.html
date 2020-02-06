@@ -1,26 +1,17 @@
-
 <!doctype html>
-<html lang="en">
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Çap Apartmanı</title>   
+   <meta name="description" content="Bütçe">
+    <meta name="author" content="Özgür ASLAN">
+   
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
 
-  <title>Çap Apartmanı</title>
-  <meta name="description" content="Bütçe">
 
-  <!--
-    The `<base>` tag below is present to support two advanced deployment options:
-    1) Differential serving. 2) Serving from a non-root path (e.g. `my.domain/expense-manager/`)
-
-    Instead of manually editing the `<base>` tag yourself, you should generally either:
-    a) Add a `basePath` property to the build configuration in your `polymer.json`.
-    b) Use the `--base-path` command-line option for `polymer build`.
-    c) Add a `autoBasePath` property in your `polymer.json` to apply this setting for multiple builds.
-  -->
-  <base href="/">
-
-  <link rel="icon" href="images/favicon.ico">
+   
+     <link rel="icon" href="images/favicon.ico">
 
   <meta name="theme-color" content="#33383a">
   <link rel="manifest" href="manifest.json">
@@ -30,17 +21,42 @@
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-status-bar-style" content="black" />
   <meta name="mobile-web-app-title" content="Expenses">
+  
+  
+   
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
 
-<!-- * This code uses the Microsoft Office Excel Javascript object model to programmatically insert the
-	 * Excel Web App into a div with id=myExcelDiv. The full API is documented at
-	 * https://msdn.microsoft.com/en-US/library/hh315812.aspx. There you can find out how to programmatically get
-	 * values from your Excel file and how to use the rest of the object model. -->
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+	<script type="text/javascript">
+    function frmLogin(){
+		let inputEmail= document.getElementById('inputEmail').value;
+        let   inputPassword= document.getElementById('inputPassword').value;
+		let iframeExcel = document.getElementById("iframeExcel");
+		let frmLogin = document.getElementById("frmLogin");
+		if(inputEmail=="çap" && inputPassword=="3475"){
+			iframeExcel.style.display = "block";
+			frmLogin.style.display = "none";
+		}
+    }
+</script>
+  </head>
 
-  <!-- Add any global styles for body, document, etc. -->
-</head>
+  <body class="text-center">
+    <form id="frmLogin" class="form-signin">
+      <!-- <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+      <h1 class="h3 mb-3 font-weight-normal">Lütfen giriş yapın</h1>
+      <label for="inputEmail" class="sr-only">Kullancı Adı</label>
+      <input type="text" id="inputEmail" class="form-control" placeholder="Kullancı Adı" required autofocus>
+      <label for="inputPassword" class="sr-only">Parola</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Parola" required>
+     
+      <button class="btn btn-lg btn-primary btn-block" onclick="frmLogin();" type="button">Giriş Yap</button>
+      <p class="mt-5 mb-3 text-muted">Özgür ASLAN &copy; 2020</p>
+    </form>
+	
+		<iframe id="iframeExcel" style="display:none; position: absolute; height: 98%; border: none" width="98%" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=7629739ADC4739F1%214614&authkey=%21ALINdVjoMyZh6ls&em=2&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
 
-<body>
-	<iframe style="position: absolute; height: 98%; border: none" width="98%" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=7629739ADC4739F1%214614&authkey=%21ALINdVjoMyZh6ls&em=2&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
-</body>
-
+  </body>
 </html>
